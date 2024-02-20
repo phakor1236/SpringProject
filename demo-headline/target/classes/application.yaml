@@ -1,0 +1,30 @@
+# server配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# 連接池配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/sm_db
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis-plus的配置
+mybatis-plus:
+  type-aliases-package: com.ph.pojo
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  #全局邏輯刪除
+      id-type: auto #主鍵自增長
+      table-prefix: news_ # 設定表前綴
+
+#jwt配置
+jwt:
+  token:
+    tokenExpiration: 120 #有效時間，單位分鐘
+    tokenSignKey: headline123456  #當前程式簽名密鑰 自訂
