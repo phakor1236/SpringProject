@@ -25,6 +25,8 @@ npm run dev
 
 後端
 ---
+用編輯器打開後端資料夾
+
 設置與數據庫的連接
 
 開啟resources/mapper/application.yaml
@@ -47,6 +49,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
+點擊run
 
 
 
