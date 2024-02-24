@@ -1,5 +1,7 @@
 # 簡易文章發布平台
 
+[簡介](https://drive.google.com/file/d/1K49msRmPn2CJS_tX1luxYH-Mbe0i9ZmD/view "簡介")
+
 demo-project是後端代碼
 
 demo-fronted是前端代碼
