@@ -23,6 +23,18 @@ npm install
 
 npm run dev
 
+後端
+---
+開啟resources/mapper/application.yaml
+
+```yaml
+server:
+  port: 8080
+  servlet:
+    context-path: /
+```
+
+
 
 
 # API簡介
