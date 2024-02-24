@@ -25,13 +25,26 @@ npm run dev
 
 後端
 ---
-開啟resources/mapper/application.yaml
+設置與數據庫的連接
+
+開啟
+
+resources/mapper/application.yaml
 
 ```yaml
 server:
   port: 8080
   servlet:
     context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/sm_db
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
 
