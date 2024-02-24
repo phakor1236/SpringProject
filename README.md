@@ -1,7 +1,10 @@
 # 簡易文章發布平台
 
 demo-project是後端代碼
+
 demo-fronted是前端代碼
+
+sql是資料數據也需要先導入
 
 # 安裝及快速開始
 需要先下載node.js
