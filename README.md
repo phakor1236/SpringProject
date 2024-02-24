@@ -17,11 +17,18 @@ sql是資料數據需要先導入
 
 安裝套件
 ---
+
+```java
 npm install
+```
+
 
 運行project
+---
 
+```java
 npm run dev
+```
 
 後端
 ---
