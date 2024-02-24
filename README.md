@@ -27,9 +27,9 @@ npm run dev
 ---
 設置與數據庫的連接
 
-開啟
+開啟resources/mapper/application.yaml
 
-resources/mapper/application.yaml
+修改成與自己檔案名稱、路徑相同
 
 ```yaml
 server:
