@@ -153,3 +153,38 @@ token:token內容
     "data": null
 }
 ```
+
+註冊帳號檢查
+---
+使用者在註冊輸入帳號時，立刻將帳號發送給後端，根據帳號查詢是否被占用並做出響應。
+
+方式:post
+
+地址:user/checkUserName
+
+### request:param
+
+```JSON
+username=帳號
+```
+
+### response
+
+成功
+
+```JSON
+{
+  "code":"200"
+  "message":"success"
+  "data":{}
+}
+```
+失敗
+
+```JSON
+{
+"code":"505"
+"message":"帳號已被使用"
+"data":{}
+}
+```
