@@ -61,3 +61,31 @@ spring:
 
 # API簡介
 
+登入功能
+---
+
+使用者在客戶端輸入帳號密碼並向後端提交,後端根據帳號和密碼判斷登錄是否成功,帳號有誤或者密碼有誤，響應不同的提示信息！
+
+方式:post
+
+地址:user/login
+
+### Request
+
+
+
+```java
+{
+    "username":"abc123456", //帳號
+    "userPwd":"123456"     //密碼
+}
+```
+
+### Response
+
+```java
+  "code":"200",         // 成功狀態碼 
+   "message":"success"   // 成功描述
+   "data":{
+    "token":"... ..." // 使用者id的token
+```
