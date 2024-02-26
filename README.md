@@ -188,3 +188,83 @@ username=帳號
 "data":{}
 }
 ```
+
+註冊功能
+---
+客戶端將新的使用者訊息發送給服務端，服務端將新用戶存入數據庫，存入前做帳號是否被占用檢查，如果通過響應成功提示，失敗響應失敗提示
+
+方式:post
+
+地址:user/regist
+
+### request
+```JSON
+{
+  "username":"abc123456"
+  "userPWd":"123456"
+  "nickname":"abc"
+}
+```
+### response
+成功
+```JSON
+{
+  "code":200
+  "message":"succcess"
+  "data":{}
+}
+```
+失敗
+```JSON
+{
+  "code":"505"
+  "message":"帳號已被使用"
+  "data":{}
+}
+```
+
+查詢首頁分類
+---
+進入首頁，查詢所有分類並且動態展示新聞類別欄位
+
+方式: get
+
+地址:portal/findAllTypes
+
+### Requset
+無
+
+### Response
+
+```JSON
+{
+   "code":"200",
+   "message":"OK"
+   "data":{
+            [
+                {
+                    "tid":"1",
+                    "tname":"新聞"
+                },
+                {
+                    "tid":"2",
+                    "tname":"體育"
+                },
+                {
+                    "tid":"3",
+                    "tname":"娛樂"
+                },
+                {
+                    "tid":"4",
+                    "tname":"科技"
+                },
+                {
+                    "tid":"5",
+                    "tname":"其他"
+                }
+            ]
+    }
+}
+```
+
+
