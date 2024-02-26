@@ -74,18 +74,40 @@ spring:
 
 
 
-```java
+```JSON
 {
     "username":"abc123456", //帳號
     "userPwd":"123456"     //密碼
 }
 ```
 
-### Response
+### Response  
 
-```java
+成功
+
+```JSON
+{
   "code":"200",         // 成功狀態碼 
    "message":"success"   // 成功描述
    "data":{
     "token":"... ..." // 使用者id的token
+  }
+}
 ```
+
+失敗
+
+```JSON
+{
+   "code":"501",
+   "message":"帳號錯誤"
+   "data":{}
+}
+
+{
+   "code":"503",
+   "message":"密碼錯誤"
+   "data":{}
+}
+```
+
