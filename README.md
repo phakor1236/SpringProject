@@ -267,4 +267,90 @@ username=帳號
 }
 ```
 
+分頁查詢首頁訊息
+---
+客戶端向服務端發送查詢關鍵字，新聞類別，頁碼，頁大小
 
+服務端根據搜尋條件搜索分頁訊息，返回含頁碼，頁大小，總點閱數，當前頁數據等訊息，並根據hid降序排序。
+
+方式:post
+
+地址:portal/findNewPage
+
+### Request
+
+```JSON
+{
+    "keyWords":"今天", // 搜尋標題關鍵字
+    "type":0,           // 新聞類型
+    "pageNum":1,        // 頁碼
+    "pageSize":10     // 頁大小
+}
+```
+
+### Response
+
+```JSON
+{
+   "code":"200",
+   "message":"success"
+   "data":{
+      "pageInfo":{
+        "pageData":[
+          {
+            "hid":"21",                      // id 
+            "title":"氣溫到達 ... ...",       // 標題
+            "type":"1",                      // 所屬類別編號
+            "pageViews":"40",                // 瀏覽量
+            "pastHours":"3" ,                // 發布時間已過時間
+            "publisher":"1"                  // 發布者的ID
+        }
+        ],
+      "pageNum":1,    //頁碼數
+      "pageSize":10,  // 頁大小
+      "totalPage":20, // 總頁數
+      "totalSize":200 // 總記錄數
+    }
+  }
+}
+```
+
+閱讀文章詳情
+---
+
+使用者點查看全部，向服務端發送文章id
+
+後端根據id查詢完整文章訊息並返回
+
+後端同時要讓新聞的瀏覽量+1
+
+方式:post
+
+地址:portal/showHeadlineDetail
+
+### Request
+
+```JSON
+hid=1 param型參數
+```
+### Response
+
+```JSON
+{
+    "code":"200",
+    "message":"success",
+    "data":{
+        "headline":{
+            "hid":"21",                     // id 
+            "title":"馬斯克宣布 ... ...",   //  標題
+            "article":"... ..."            //  內文
+            "type":"1",                    // 所屬類別編號
+            "typeName":"科技",             // 所屬類別
+            "pageViews":"40",              // 瀏覽量
+            "pastHours":"3" ,              // 發布已過的時間
+            "publisher":"1" ,              // 發布者ID
+            "author":"abc123456"           // 發布者暱稱
+        }
+    }
+}
+```
