@@ -483,5 +483,38 @@ hid = 1 param參數
 ### Request
 ```JSON
 {
-
+   "hid":"1"
+   "title":"今天天氣... ..."
+   "article":"... ... ..."
+   "type":"2"
 }
+```
+### Response
+```JSON
+{
+    "code":"200",
+    "message":"success",
+    "data":{}
+}
+```
+刪除
+---
+- 將要刪除的文章id發送給服務端
+- 服務端校驗登錄是否過期,未過期則直接刪除,過期則響應登錄過期訊息
+
+請求方式:post
+
+地址:headline/removeByHid
+
+### Request
+```JSON
+hid=1 param參數
+```
+### Response
+```JSON
+{
+   "code":"200",
+   "message":"success",
+   "data":{}
+}
+```
