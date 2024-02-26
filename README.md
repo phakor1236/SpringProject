@@ -111,3 +111,45 @@ spring:
 }
 ```
 
+根據token獲取使用者數據
+---
+客戶端發送請求，提交token請求頭，後端根據token請求頭獲取登入用戶的訊息並返回給客戶端進行儲存
+
+方式:get
+
+地址:user/getUserInfo
+
+### Request Header
+
+```JSON
+token:token內容
+```
+
+### Response
+
+成功
+
+```JSON
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "loginUser": {
+            "uid": 1,
+            "username": "abc123456",
+            "userPwd": "",
+            "nickName": "abc"
+        }
+    }
+}
+```
+
+失敗
+
+```JSON
+{
+    "code": 504,
+    "message": "notLogin",
+    "data": null
+}
+```
